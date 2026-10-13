@@ -25,6 +25,14 @@
     <!-- Extensions defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
+        <!-- Interactive spritesheet viewer for each half of a libGDX asset pair. -->
+        <fileEditorProvider
+                implementation="com.axehigh.libgdx.plugin.assets.editor.PngLibgdxAssetEditorProvider"/>
+        <fileEditorProvider
+                implementation="com.axehigh.libgdx.plugin.assets.editor.AtlasLibgdxAssetEditorProvider"/>
+        <!-- Per-region thumbnail gutter marks in .atlas text editors. -->
+        <editorFactoryListener
+                implementation="com.axehigh.libgdx.plugin.assets.editor.AtlasGutterListener"/>
     </extensions>
 
 </idea-plugin>
